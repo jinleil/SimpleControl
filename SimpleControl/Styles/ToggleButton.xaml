@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:SimpleControl.Styles"
+                    xmlns:cvt ="clr-namespace:SimpleControl.Converters">
+
+    <cvt:ToggleButtonCornerRadiusConverter x:Key="radiusConverter"/>
+
+    <Style x:Key="ToggleButtonBaseStyle" TargetType="ToggleButton">
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid>
+                        <Border Name="PART_Border" Background="Gray" CornerRadius="{TemplateBinding Height, Converter={StaticResource radiusConverter}}"/>
+                        <Ellipse Name="PART_Ellipse" Width="{TemplateBinding Height}" Height="{TemplateBinding Height}" Fill="White" HorizontalAlignment="Left"/>
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" Value="Blue" TargetName="PART_Border"/>
+                            <Setter Property="HorizontalAlignment" Value="Right" TargetName="PART_Ellipse"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+           
+</ResourceDictionary>
