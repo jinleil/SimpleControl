@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SimpleControl.Demo.ViewModels
 {
-    class MainViewModel
+    internal class MainViewModel
     {
         private readonly IRegionManager regionManager;
 
@@ -38,6 +38,5 @@ namespace SimpleControl.Demo.ViewModels
                 regionManager.RequestNavigate("MainRegion", selectedItem);
             }
         }
-
     }
 }

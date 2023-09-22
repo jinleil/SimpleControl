@@ -29,7 +29,7 @@ namespace SimpleControl.Demo
             containerRegistry.RegisterForNavigation<ListBoxView, ListBoxViewModel>("ListBox");
             containerRegistry.RegisterForNavigation<ToggleButtonView, ToggleButtonViewModel>("ToggleButton");
             containerRegistry.RegisterForNavigation<ProgressBarView, ProgressBarViewModel>("ProgressBar");
-            
+            containerRegistry.RegisterForNavigation<ComboxView, ComboxViewModel>("ComBox");
         }
     }
 }
